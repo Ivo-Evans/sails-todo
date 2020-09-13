@@ -1,0 +1,17 @@
+<main id="todosPage">
+  <script src="js/components/todoForm.js"></script>
+  <h1 class="title">Ivo's TODO App</h1>
+
+  <p v-if="!todos.length">There are no TODOs yet. Why not add one?</p>
+  <div class="todolist">
+
+    <div v-for="todo in todos"  :class="todo.completed ? 'todo todo--completed' : 'todo'" @click="toggleTodo(todo.id)" >
+      <p>{{ todo.title }}</p>
+      <span @click="deleteTodo(todo.id)" class="todo__cross">
+        <p >X</p>
+
+      </span>
+    </div>
+  </div>
+    <todo-form @todo-submitted="addTodo"/>
+</main>
