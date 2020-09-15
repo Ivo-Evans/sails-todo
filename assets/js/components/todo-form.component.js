@@ -19,7 +19,7 @@ parasails.registerComponent("todoForm", {
   },
 
   template: `
-  <form @submit.prevent="onSubmit">
+  <form class="todo__form" @submit.prevent="onSubmit">
     <input type="text" v-model="todo"></input>
     <input type="submit" value="Add"/>
   </form>
